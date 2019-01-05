@@ -1,12 +1,13 @@
 language: python
 python:
-  -"3.7.1"
+  - "3.7.1"
+  - "3.6"
 deploy:
   provider: heroku
   api_key:
     secure: "74dd9b5f-029a-4a6e-9d64-58db96dff224"
   run:
-    -"python manage.py collectstatic"
-    -"python manage.py migrate"
+    - "python manage.py collectstatic"
+    - "python manage.py migrate"
 script:
   - pytest
