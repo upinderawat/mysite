@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Register for Pooling Booth</h1>
+{% if registered %}
+Already Register
+{% else %}
+<form method = "POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+
+    <input type = "submit" value="Register"/>
+</form>
+{% endif%}
+{% endblock %}
